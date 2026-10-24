@@ -1,0 +1,115 @@
+/* ===== EcoSignal CI - style.css ===== */
+:root {
+  --vert: #1b6b4a;
+  --fond: #f4f7f5;
+  --texte: #1e2a25;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: var(--fond);
+  color: var(--texte);
+}
+
+header { background: var(--vert); color: #fff; padding: 16px 20px; }
+header h1 { margin: 0; font-size: 1.6rem; }
+header p { margin: 4px 0 0; opacity: 0.9; }
+
+main { max-width: 1100px; margin: 0 auto; padding: 16px; }
+
+#message {
+  display: none;
+  background: #fdecea;
+  color: #8a1f11;
+  padding: 10px 12px;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+#filtres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: flex-end;
+  margin-bottom: 16px;
+}
+#filtres label { display: flex; flex-direction: column; font-size: 0.85rem; gap: 4px; }
+
+select, button {
+  padding: 8px 10px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #b9c7bf;
+  background: #fff;
+}
+button { background: var(--vert); color: #fff; border-color: var(--vert); cursor: pointer; }
+
+#stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.carte-stat {
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+.carte-stat span { display: block; font-size: 1.6rem; font-weight: 700; color: var(--vert); }
+.carte-stat small { color: #5a6b63; }
+
+#carte { height: 480px; border-radius: 10px; margin-bottom: 16px; }
+
+#zone-graphique {
+  position: relative;
+  height: 320px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+
+.legende {
+  background: rgba(255, 255, 255, 0.92);
+  padding: 8px 10px;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.legende span {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+
+footer { text-align: center; font-size: 0.8rem; color: #5a6b63; padding: 16px; }
+
+@media (max-width: 600px) {
+  #carte { height: 380px; }
+}
+
+/* ----- Assistant IA ----- */
+#assistant {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  margin-top: 16px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+}
+#assistant h2 { margin: 0 0 6px; font-size: 1.2rem; color: var(--vert); }
+.aide { margin: 0 0 10px; font-size: 0.85rem; color: #5a6b63; }
+.ligne-question { display: flex; gap: 8px; margin-top: 10px; }
+.ligne-question input {
+  flex: 1;
+  padding: 8px 10px;
+  font-size: 1rem;
+  border: 1px solid #b9c7bf;
+  border-radius: 6px;
+}
+#reponse-ia { margin-top: 12px; white-space: pre-wrap; line-height: 1.5; }

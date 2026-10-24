@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EcoSignal CI</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>EcoSignal CI</h1>
+    <p>Carte des signalements environnement et santé en Côte d'Ivoire</p>
+  </header>
+
+  <main>
+    <div id="message"></div>
+
+    <section id="filtres">
+      <label>Type de problème
+        <select id="filtre-type"><option value="">Tous</option></select>
+      </label>
+      <label>Commune
+        <select id="filtre-commune"><option value="">Toutes</option></select>
+      </label>
+      <button id="bouton-reset" type="button">Réinitialiser</button>
+    </section>
+
+    <section id="stats">
+      <div class="carte-stat"><span id="stat-total">0</span><small>signalements</small></div>
+      <div class="carte-stat"><span id="stat-commune">-</span><small>commune la plus touchée</small></div>
+      <div class="carte-stat"><span id="stat-graves">0</span><small>de gravité élevée</small></div>
+    </section>
+
+    <div id="carte"></div>
+
+    <section id="zone-graphique">
+      <canvas id="graphique"></canvas>
+    </section>
+
+    <section id="assistant">
+      <h2>Assistant IA</h2>
+      <p class="aide">Réponse générée par intelligence artificielle à partir des signalements
+        affichés (chiffres uniquement). À vérifier : elle peut contenir des erreurs.</p>
+      <button id="bouton-resume" type="button">Résumer la situation</button>
+      <div class="ligne-question">
+        <input id="question" type="text" maxlength="300"
+               placeholder="Pose une question sur les signalements affichés">
+        <button id="bouton-question" type="button">Demander</button>
+      </div>
+      <div id="reponse-ia"></div>
+    </section>
+  </main>
+
+  <footer>
+    EcoSignal CI - Projet pédagogique de cartographie citoyenne.
+    Données indicatives, non vérifiées par une autorité sanitaire.
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

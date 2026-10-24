@@ -1,0 +1,11 @@
+EcoSignal CI - dossier compagnon de la formation PDF
+
+Contenu :
+- index.html, style.css, app.js : les 3 fichiers du site (version finale, avec l'assistant IA)
+- data/signalements.csv : donnees d'exemple FICTIVES (a remplacer par tes vraies donnees Kobo)
+- worker.js : code du relais Cloudflare pour l'assistant IA (Module 11)
+
+Rappels :
+- Ouvre le site avec Go Live (VS Code), jamais par double-clic sur index.html.
+- Dans app.js, remplace COLLE-ICI-L-ADRESSE-DE-TON-RELAIS par l'adresse de ton Worker (Module 11).
+- Ne mets JAMAIS ta cle API dans ces fichiers.
