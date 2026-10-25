@@ -45,6 +45,9 @@ function echapper(texte) {
   div.textContent = texte;
   return div.innerHTML;
 }
+function majuscule(texte) {
+  return texte.replace(/\b\w/g, l => l.toUpperCase());
+}
 
 function joli(texte) {
   return String(texte || "").replace(/_/g, " ");
@@ -80,7 +83,7 @@ function chargerDonnees() {
         return {
           type: cle(ligne.type_signal) || "autre",
           date: ligne.date_signal || "",
-          commune: joli(ligne.commune) || "Non précisée",
+      commune: majuscule(joli(ligne.commune)) || "Non précisée",         
           repere: ligne.repere || "",
           gravite: cle(ligne.gravite),
           description: ligne.description || "",
